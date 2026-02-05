@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs:*)",
+      "Bash(tree:*)",
+      "WebFetch",
+      "WebSearch",
+      "WebFetch(domain:lincnil.github.io)",
+      "WebFetch(domain:www.securitycompass.com)",
+      "WebFetch(domain:www.cookieyes.com)"
+    ]
+  }
+}
