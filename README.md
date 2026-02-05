@@ -1,6 +1,6 @@
 # bh-skills
 
-Personal Claude Code plugin — a collection of reusable skills.
+Personal Claude Code plugin — a collection of Claude skills to enhance you're codebase.
 
 ## Available Skills
 
