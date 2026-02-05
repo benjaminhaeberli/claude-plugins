@@ -1,6 +1,6 @@
 # bh-skills
 
-Personal Claude Code plugin — a collection of Claude skills to enhance you're codebase.
+Personal Claude Code plugin — a collection of Claude skills to enhance your codebase.
 
 ## Available Skills
 
@@ -19,13 +19,13 @@ This repo works as a private GitHub repository — no need to make it public. Au
 **1. Add the marketplace** (once per machine):
 
 ```
-/plugin marketplace add git@github.com:YOUR_USER/skills.git
+/plugin marketplace add git@github.com:benjaminhaeberli/bh-skills.git
 ```
 
 **2. Install the plugin**:
 
 ```
-/plugin install bh-skills@YOUR_USER-skills
+/plugin install bh-skills@benjaminhaeberli-bh-skills
 ```
 
 Auto-updates can be enabled via `/plugin` > Marketplaces > Enable auto-update.
