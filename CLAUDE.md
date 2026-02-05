@@ -1,20 +1,20 @@
-# Skills Repository
+# bh-skills
 
-Personal collection of reusable Claude Code skills.
+Personal Claude Code plugin with reusable skills.
 
 ## Structure
 
 ```
-skills/
-└── <skill-name>/
-    └── SKILL.md
+.claude-plugin/plugin.json    # Plugin manifest
+skills/<skill-name>/SKILL.md  # Each skill
 ```
 
-Each skill follows the standard Claude skill format: a `SKILL.md` with YAML frontmatter (`name`, `description`) and Markdown instructions, plus optional `scripts/`, `references/`, and `assets/` directories.
+Each skill follows the standard format: `SKILL.md` with YAML frontmatter (`name`, `description`) and Markdown instructions, plus optional `scripts/`, `references/`, and `assets/` directories.
 
 ## Adding a New Skill
 
-Use the `skill-creator` skill for guidance on creating new skills. Key principles:
-- Keep SKILL.md concise (< 500 lines) - Claude is already smart, only add what it doesn't know
+Use the `skill-creator` skill for guidance. Key principles:
+
+- Keep SKILL.md concise (< 500 lines)
 - Use progressive disclosure: metadata always loaded, body on trigger, resources on demand
-- Match freedom level to task fragility (high freedom for flexible tasks, low for fragile ones)
+- Match freedom level to task fragility
