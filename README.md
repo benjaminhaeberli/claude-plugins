@@ -4,10 +4,11 @@ Personal Claude Code plugin — a collection of reusable skills.
 
 ## Available Skills
 
-| Skill                                          | Description                                      |
-| ---------------------------------------------- | ------------------------------------------------ |
-| [skill-creator](skills/skill-creator/)         | Guide for creating effective skills              |
-| [ecodesign-analyze](skills/ecodesign-analyze/) | Audit eco-design & digital sobriety of a web app |
+| Skill                                        | Description                                      |
+| -------------------------------------------- | ------------------------------------------------ |
+| [skill-creator](skills/skill-creator/)       | Guide for creating effective skills              |
+| [ecodesign-review](skills/ecodesign-review/) | Audit eco-design & digital sobriety of a web app |
+| [gdpr-review](skills/gdpr-review/)           | Audit GDPR/RGPD/nLPD compliance of a web app    |
 
 ## Installation
 
@@ -42,7 +43,8 @@ Add individual skills to your project's `.claude/settings.json`:
 ```json
 {
   "skills": [
-    "/path/to/skills/skills/ecodesign-analyze",
+    "/path/to/skills/skills/ecodesign-review",
+    "/path/to/skills/skills/gdpr-review",
     "/path/to/skills/skills/skill-creator"
   ]
 }
@@ -56,7 +58,11 @@ Add individual skills to your project's `.claude/settings.json`:
 skills/
 ├── skill-creator/
 │   └── SKILL.md
-└── ecodesign-analyze/
+├── ecodesign-review/
+│   ├── SKILL.md
+│   └── references/
+│       └── checklist.md
+└── gdpr-review/
     ├── SKILL.md
     └── references/
         └── checklist.md

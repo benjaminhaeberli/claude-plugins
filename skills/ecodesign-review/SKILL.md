@@ -1,5 +1,5 @@
 ---
-name: ecodesign-analyze
+name: ecodesign-review
 description: Analyze a web application or codebase for eco-design and digital sobriety. Use when the user asks to audit, check, review, or analyze the ecological impact, green IT compliance, eco-design, energy efficiency, or digital sobriety of a website, web app, or codebase. Also use when the user mentions "ecodesign", "green IT", "sobriete numerique", "eco-conception", "RGESN", or "115 pratiques". Works with HTML, CSS, JavaScript, TypeScript, PHP, and common web frameworks.
 ---
 
@@ -64,6 +64,7 @@ X / Y pratiques conformes (Z%)
 ```
 
 **Status values:**
+
 - **OK** - Practice is followed
 - **KO** - Practice is not followed (include recommendation)
 - **NA** - Not applicable to this project
