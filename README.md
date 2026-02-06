@@ -8,11 +8,12 @@
 
 | Skill                                                        | Description                                         |
 | ------------------------------------------------------------ | --------------------------------------------------- |
-| [skill-creator](skills/general/skill-creator/)               | Guide for creating effective skills                 |
-| [ecodesign-review](skills/general/ecodesign-review/)         | Audit eco-design & digital sobriety of a web app    |
-| [gdpr-review](skills/general/gdpr-review/)                   | Audit GDPR/RGPD/nLPD compliance of a web app        |
-| [seo-review](skills/general/seo-review/)                     | Audit technical SEO of a web app                    |
-| [accessibility-review](skills/general/accessibility-review/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app |
+| [skill-creator](skills/general/skill-creator/)               | Guide for creating effective skills                          |
+| [ecodesign-review](skills/general/ecodesign-review/)         | Audit eco-design & digital sobriety of a web app             |
+| [gdpr-review](skills/general/gdpr-review/)                   | Audit GDPR/RGPD/nLPD compliance of a web app                |
+| [seo-review](skills/general/seo-review/)                     | Audit technical SEO of a web app                             |
+| [accessibility-review](skills/general/accessibility-review/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app         |
+| [documentator](skills/general/documentator/)                 | Generate or update structured documentation in Markdown      |
 
 ### Stack-specific (PHP / Laravel / Kirby)
 
@@ -57,6 +58,7 @@ Add individual skills to your project's `.claude/settings.json`:
     "/path/to/claude-plugins/skills/general/gdpr-review",
     "/path/to/claude-plugins/skills/general/seo-review",
     "/path/to/claude-plugins/skills/general/accessibility-review",
+    "/path/to/claude-plugins/skills/general/documentator",
     "/path/to/claude-plugins/skills/general/skill-creator",
     "/path/to/claude-plugins/skills/php/php-security-review",
     "/path/to/claude-plugins/skills/php/php-performance-review"
@@ -91,10 +93,12 @@ skills/
 │   │   ├── SKILL.md
 │   │   └── references/
 │   │       └── checklist.md
-│   └── accessibility-review/
-│       ├── SKILL.md
-│       └── references/
-│           └── checklist.md
+│   ├── accessibility-review/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── checklist.md
+│   └── documentator/
+│       └── SKILL.md
 └── php/                          # php-skills plugin
     ├── php-security-review/
     │   ├── SKILL.md

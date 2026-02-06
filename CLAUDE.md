@@ -19,3 +19,4 @@ Use the `skill-creator` skill for guidance. Key principles:
 - Keep SKILL.md concise (< 500 lines)
 - Use progressive disclosure: metadata always loaded, body on trigger, resources on demand
 - Match freedom level to task fragility
+- **Always update `marketplace.json` and `README.md`** when adding or modifying a skill (table, structure tree, and manual install path)
