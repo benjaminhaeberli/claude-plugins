@@ -1,6 +1,6 @@
-# bh-skills
+# 🤖 Claude Plugins
 
-Personal Claude Code plugin with reusable skills.
+**A collection of Claude plugins to enhance your codebase**
 
 ## Structure
 

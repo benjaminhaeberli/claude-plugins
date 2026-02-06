@@ -1,25 +1,25 @@
-# claude-plugins
+# 🤖 Claude Plugins
 
-Personal Claude Code marketplace — a collection of skills to enhance your codebase.
+**A collection of Claude plugins to enhance your codebase**
 
 ## Plugins
 
 ### General (framework-agnostic)
 
-| Skill                                              | Description                                             |
-| -------------------------------------------------- | ------------------------------------------------------- |
-| [skill-creator](skills/general/skill-creator/)             | Guide for creating effective skills                     |
-| [ecodesign-review](skills/general/ecodesign-review/)       | Audit eco-design & digital sobriety of a web app        |
-| [gdpr-review](skills/general/gdpr-review/)                 | Audit GDPR/RGPD/nLPD compliance of a web app            |
-| [seo-review](skills/general/seo-review/)                   | Audit technical SEO of a web app                        |
-| [accessibility-review](skills/general/accessibility-review/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app  |
+| Skill                                                        | Description                                         |
+| ------------------------------------------------------------ | --------------------------------------------------- |
+| [skill-creator](skills/general/skill-creator/)               | Guide for creating effective skills                 |
+| [ecodesign-review](skills/general/ecodesign-review/)         | Audit eco-design & digital sobriety of a web app    |
+| [gdpr-review](skills/general/gdpr-review/)                   | Audit GDPR/RGPD/nLPD compliance of a web app        |
+| [seo-review](skills/general/seo-review/)                     | Audit technical SEO of a web app                    |
+| [accessibility-review](skills/general/accessibility-review/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app |
 
 ### Stack-specific (PHP / Laravel / Kirby)
 
-| Skill                                                    | Description                                         | Technologies                                                    |
-| -------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------------------- |
-| [php-security-review](skills/php/php-security-review/)       | Audit OWASP security of a PHP web app               | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL   |
-| [php-performance-review](skills/php/php-performance-review/) | Audit performance & optimization of a PHP web app   | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL   |
+| Skill                                                        | Description                                       | Technologies                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------- | ------------------------------------------------------------- |
+| [php-security-review](skills/php/php-security-review/)       | Audit OWASP security of a PHP web app             | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
+| [php-performance-review](skills/php/php-performance-review/) | Audit performance & optimization of a PHP web app | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
 
 ## Installation
 
