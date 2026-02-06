@@ -92,6 +92,45 @@ When listing recommendations, prioritize by measurable impact:
 3. **Quick wins** - Low effort gains (config caching, select specific columns, lazy loading images)
 4. **Progressive** - Architecture improvements (caching strategy, denormalization, CDN)
 
+### 6. Export the Review Report
+
+Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
+
+```
+/docs/YYMMDD_php-performance-review.md
+```
+
+Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.
+
+The document must include:
+
+1. The complete audit report (as generated in step 4)
+2. An **action plan** section at the end, listing all tasks derived from the findings:
+   - Grouped by priority (Critical, High impact, Quick wins, Progressive)
+   - Each task broken down into sub-tasks of **2 to 4 hours** (assuming AI-assisted development)
+   - Time estimate for each sub-task
+   - Total estimated time per priority level
+
+```
+### Plan d'action
+
+#### Critique
+- [ ] [Tache] — ~Xh (avec IA)
+  - [ ] [Sous-tache 1] — ~2h
+  - [ ] [Sous-tache 2] — ~3h
+
+#### Impact eleve
+...
+
+#### Quick wins
+...
+
+#### Progressif
+...
+
+**Total estime : ~Xh**
+```
+
 ## Important Notes
 
 - This is a **static code audit**, not a runtime profiling session. Recommend tools like Laravel Telescope, Debugbar, or Blackfire for runtime analysis.

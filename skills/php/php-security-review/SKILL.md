@@ -93,6 +93,45 @@ When listing recommendations, prioritize by exploitability:
 3. **Medium** - Exploitable under specific conditions (information disclosure, missing headers)
 4. **Low** - Defense-in-depth improvements (logging, rate limiting, dependency updates)
 
+### 6. Export the Review Report
+
+Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
+
+```
+/docs/YYMMDD_php-security-review.md
+```
+
+Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.
+
+The document must include:
+
+1. The complete audit report (as generated in step 4)
+2. An **action plan** section at the end, listing all tasks derived from the findings:
+   - Grouped by priority (Critical, High, Medium, Low)
+   - Each task broken down into sub-tasks of **2 to 4 hours** (assuming AI-assisted development)
+   - Time estimate for each sub-task
+   - Total estimated time per priority level
+
+```
+### Plan d'action
+
+#### Critique
+- [ ] [Tache] — ~Xh (avec IA)
+  - [ ] [Sous-tache 1] — ~2h
+  - [ ] [Sous-tache 2] — ~3h
+
+#### Haute priorite
+...
+
+#### Moyenne priorite
+...
+
+#### Basse priorite
+...
+
+**Total estime : ~Xh**
+```
+
 ## Important Notes
 
 - This is a **static code audit**, not a penetration test. Recommend DAST/pentest for full coverage.
