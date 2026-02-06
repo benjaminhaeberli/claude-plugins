@@ -18,11 +18,11 @@ description: >
 
 ### 2. Determine the Output Location
 
-- **General documentation**: `/docs/YYMMDD_topic-name.md`
-- **Tasks and PRDs**: `/docs/tasks/YYMMDD_topic-name.md`
+- **General documentation**: `/docs/YYMMDD_topic_name.md`
+- **Tasks and PRDs**: `/docs/tasks/YYMMDD_topic_name.md`
 - Respect any explicit path provided by the user (overrides defaults)
 - Use today's date for the `YYMMDD` prefix (e.g., `260206` for February 6, 2026)
-- Use lowercase kebab-case for `topic-name`
+- Use lowercase snake_case for `topic_name` (e.g., `260206_scaling_serveur.md`)
 
 ### 3. Write the Document
 
