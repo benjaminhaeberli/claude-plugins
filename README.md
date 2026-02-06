@@ -1,8 +1,8 @@
-# bh-skills
+# claude-plugins
 
-Personal Claude Code plugin — a collection of Claude skills to enhance your codebase.
+Personal Claude Code marketplace — a collection of skills to enhance your codebase.
 
-## Available Skills
+## Plugins
 
 ### General (framework-agnostic)
 
@@ -23,18 +23,19 @@ Personal Claude Code plugin — a collection of Claude skills to enhance your co
 
 ## Installation
 
-### As a plugin (recommended)
+### As plugins (recommended)
 
 **1. Add the marketplace** (once per machine):
 
 ```
-/plugin marketplace add https://github.com/benjaminhaeberli/bh-skills.git
+/plugin marketplace add https://github.com/benjaminhaeberli/claude-plugins.git
 ```
 
-**2. Install the plugin**:
+**2. Install the plugins**:
 
 ```
-/plugin install bh-skills@benjaminhaeberli-bh-skills
+/plugin install general-skills@benjaminhaeberli
+/plugin install php-skills@benjaminhaeberli
 ```
 
 Auto-updates can be enabled via `/plugin` > Marketplaces > Enable auto-update.
@@ -67,8 +68,7 @@ Add individual skills to your project's `.claude/settings.json`:
 
 ```
 .claude-plugin/
-├── marketplace.json          # Marketplace catalog
-└── plugin.json               # Plugin manifest
+└── marketplace.json          # Marketplace catalog
 skills/
 ├── skill-creator/
 │   └── SKILL.md
