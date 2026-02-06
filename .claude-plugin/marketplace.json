@@ -1,26 +1,34 @@
 {
-  "name": "benjaminhaeberli-bh-skills",
+  "name": "benjaminhaeberli",
   "owner": {
     "name": "Benjamin Haeberli"
   },
   "metadata": {
-    "description": "Personal collection of reusable Claude Code skills: eco-design, GDPR/RGPD, SEO, accessibility, PHP security, PHP performance auditing, and skill creation guide.",
+    "description": "Personal collection of reusable Claude Code skills",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "bh-skills",
-      "description": "Personal collection of reusable Claude Code skills: eco-design, GDPR/RGPD, SEO, accessibility, PHP security, PHP performance auditing, and skill creation guide.",
+      "name": "general-skills",
+      "description": "Skills for eco-design, GDPR, SEO, accessibility audits and skill creation.",
       "source": "./",
       "strict": false,
       "skills": [
         "./skills/accessibility-review",
         "./skills/ecodesign-review",
         "./skills/gdpr-review",
-        "./skills/php-performance-review",
-        "./skills/php-security-review",
         "./skills/seo-review",
         "./skills/skill-creator"
+      ]
+    },
+    {
+      "name": "php-skills",
+      "description": "PHP-focused skills for security and performance auditing.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/php-performance-review",
+        "./skills/php-security-review"
       ]
     }
   ]
