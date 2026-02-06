@@ -25,12 +25,10 @@ Personal Claude Code plugin — a collection of Claude skills to enhance your co
 
 ### As a plugin (recommended)
 
-This repo works as a private GitHub repository — no need to make it public. Authentication is handled by your existing git config (SSH keys or HTTPS token).
-
 **1. Add the marketplace** (once per machine):
 
 ```
-/plugin marketplace add git@github.com:benjaminhaeberli/bh-skills.git
+/plugin marketplace add https://github.com/benjaminhaeberli/bh-skills.git
 ```
 
 **2. Install the plugin**:
@@ -69,6 +67,7 @@ Add individual skills to your project's `.claude/settings.json`:
 
 ```
 .claude-plugin/
+├── marketplace.json          # Marketplace catalog
 └── plugin.json               # Plugin manifest
 skills/
 ├── skill-creator/
