@@ -64,6 +64,12 @@ Add individual skills to your project's `.claude/settings.json`:
 }
 ```
 
+## License
+
+This project is licensed under [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+The `skill-creator` skill contains content derived from Anthropic's Claude Code documentation, originally licensed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). In accordance with Apache 2.0 terms, proper attribution is maintained. The derivative work is distributed under CC-BY-SA-4.0.
+
 ## Structure
 
 ```

@@ -85,6 +85,45 @@ When listing recommendations, prioritize by:
 3. **Quick wins** - Low effort improvements (alt texts, Open Graph tags, sitemap tweaks)
 4. **Progressive** - Long-term improvements (URL restructuring, rendering strategy)
 
+### 6. Export the Review Report
+
+Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
+
+```
+/docs/YYMMDD_seo-review.md
+```
+
+Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.
+
+The document must include:
+
+1. The complete audit report (as generated in step 4)
+2. An **action plan** section at the end, listing all tasks derived from the findings:
+   - Grouped by priority (Critical, High impact, Quick wins, Progressive)
+   - Each task broken down into sub-tasks of **2 to 4 hours** (assuming AI-assisted development)
+   - Time estimate for each sub-task
+   - Total estimated time per priority level
+
+```
+### Plan d'action
+
+#### Critique
+- [ ] [Tache] — ~Xh (avec IA)
+  - [ ] [Sous-tache 1] — ~2h
+  - [ ] [Sous-tache 2] — ~3h
+
+#### Impact eleve
+...
+
+#### Quick wins
+...
+
+#### Progressif
+...
+
+**Total estime : ~Xh**
+```
+
 ## Important Notes
 
 - This is a **technical code audit**, not a content or backlink audit.

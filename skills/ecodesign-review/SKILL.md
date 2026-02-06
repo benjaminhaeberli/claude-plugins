@@ -78,6 +78,42 @@ When listing recommendations, prioritize by:
 2. **High impact** - More effort but significant gains (removing unused deps, static pages)
 3. **Progressive** - Long-term improvements (architecture, caching strategy)
 
+### 6. Export the Review Report
+
+Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
+
+```
+/docs/YYMMDD_ecodesign-review.md
+```
+
+Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.
+
+The document must include:
+
+1. The complete audit report (as generated in step 4)
+2. An **action plan** section at the end, listing all tasks derived from the findings:
+   - Grouped by priority (Quick wins, High impact, Progressive)
+   - Each task broken down into sub-tasks of **2 to 4 hours** (assuming AI-assisted development)
+   - Time estimate for each sub-task
+   - Total estimated time per priority level
+
+```
+### Plan d'action
+
+#### Quick wins
+- [ ] [Tache] — ~Xh (avec IA)
+  - [ ] [Sous-tache 1] — ~2h
+  - [ ] [Sous-tache 2] — ~3h
+
+#### Impact eleve
+...
+
+#### Progressif
+...
+
+**Total estime : ~Xh**
+```
+
 ## Important Notes
 
 - Do NOT check for practices that are handled by default in modern tooling (HTTP/2, HSTS, etc.)

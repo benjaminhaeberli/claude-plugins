@@ -5,7 +5,8 @@
   },
   "metadata": {
     "description": "Personal collection of reusable Claude Code skills",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "license": "CC-BY-SA-4.0"
   },
   "plugins": [
     {
@@ -13,6 +14,7 @@
       "description": "Skills for eco-design, GDPR, SEO, accessibility audits and skill creation.",
       "source": "./",
       "strict": false,
+      "license": "CC-BY-SA-4.0",
       "skills": [
         "./skills/accessibility-review",
         "./skills/ecodesign-review",
@@ -26,6 +28,7 @@
       "description": "PHP-focused skills for security and performance auditing.",
       "source": "./",
       "strict": false,
+      "license": "CC-BY-SA-4.0",
       "skills": [
         "./skills/php-performance-review",
         "./skills/php-security-review"
