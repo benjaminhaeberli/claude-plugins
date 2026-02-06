@@ -12,26 +12,26 @@
     {
       "name": "general-skills",
       "description": "Skills for eco-design, GDPR, SEO, accessibility audits and skill creation.",
-      "source": "./",
+      "source": "./skills/general",
       "strict": false,
       "license": "CC-BY-SA-4.0",
       "skills": [
-        "./skills/accessibility-review",
-        "./skills/ecodesign-review",
-        "./skills/gdpr-review",
-        "./skills/seo-review",
-        "./skills/skill-creator"
+        "./accessibility-review",
+        "./ecodesign-review",
+        "./gdpr-review",
+        "./seo-review",
+        "./skill-creator"
       ]
     },
     {
       "name": "php-skills",
       "description": "PHP-focused skills for security and performance auditing.",
-      "source": "./",
+      "source": "./skills/php",
       "strict": false,
       "license": "CC-BY-SA-4.0",
       "skills": [
-        "./skills/php-performance-review",
-        "./skills/php-security-review"
+        "./php-performance-review",
+        "./php-security-review"
       ]
     }
   ]

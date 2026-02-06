@@ -5,8 +5,9 @@ Personal Claude Code plugin with reusable skills.
 ## Structure
 
 ```
-.claude-plugin/plugin.json    # Plugin manifest
-skills/<skill-name>/SKILL.md  # Each skill
+.claude-plugin/marketplace.json          # Marketplace catalog
+skills/general/<skill-name>/SKILL.md     # General skills (framework-agnostic)
+skills/php/<skill-name>/SKILL.md         # PHP-specific skills
 ```
 
 Each skill follows the standard format: `SKILL.md` with YAML frontmatter (`name`, `description`) and Markdown instructions, plus optional `scripts/`, `references/`, and `assets/` directories.
