@@ -13,6 +13,7 @@
 | [gdpr-review](skills/general/gdpr-review/)                   | Audit GDPR/RGPD/nLPD compliance of a web app                |
 | [seo-review](skills/general/seo-review/)                     | Audit technical SEO of a web app                             |
 | [accessibility-review](skills/general/accessibility-review/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app         |
+| [changelogator](skills/general/changelogator/)               | Generate a changelog from git commits (Keep a Changelog + Semver)            |
 | [commitor](skills/general/commitor/)                         | Generate commit messages (GitMoji + Conventional Commits + Keep a Changelog) |
 | [documentator](skills/general/documentator/)                 | Generate or update structured documentation in Markdown      |
 
@@ -59,6 +60,7 @@ Add individual skills to your project's `.claude/settings.json`:
     "/path/to/claude-plugins/skills/general/gdpr-review",
     "/path/to/claude-plugins/skills/general/seo-review",
     "/path/to/claude-plugins/skills/general/accessibility-review",
+    "/path/to/claude-plugins/skills/general/changelogator",
     "/path/to/claude-plugins/skills/general/commitor",
     "/path/to/claude-plugins/skills/general/documentator",
     "/path/to/claude-plugins/skills/general/skill-creator",
@@ -99,6 +101,8 @@ skills/
 │   │   ├── SKILL.md
 │   │   └── references/
 │   │       └── checklist.md
+│   ├── changelogator/
+│   │   └── SKILL.md
 │   ├── commitor/
 │   │   └── SKILL.md
 │   └── documentator/
