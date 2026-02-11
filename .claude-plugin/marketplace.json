@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "general-skills",
-      "description": "Skills for eco-design, GDPR, SEO, accessibility audits, documentation, git commit messages, and skill creation.",
+      "description": "Skills for eco-design, GDPR, SEO, accessibility audits, documentation, commit message generation, and skill creation.",
       "source": "./skills/general",
       "strict": false,
       "license": "CC-BY-SA-4.0",
@@ -19,7 +19,7 @@
         "./accessibility-review",
         "./ecodesign-review",
         "./gdpr-review",
-        "./gitmoji-commit",
+        "./commitor",
         "./documentator",
         "./seo-review",
         "./skill-creator"
