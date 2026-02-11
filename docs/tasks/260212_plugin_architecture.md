@@ -8,7 +8,7 @@ Revoir l'architecture du package `claude-plugins` pour passer de 2 plugins (gene
 
 L'architecture actuelle regroupe tous les skills non-PHP dans un seul plugin `general-skills` (8 skills). Ce plugin mélange des skills très différents :
 
-- **Audits / Reviews** : ecodesign, gdpr, seo, accessibility
+- **Audits** : ecodesign, gdpr, seo, accessibility -> les renommer en `-audit` au lieu de `-review` pour plus de clarté
 - **Git / Workflow** : commitor, changelogator, (futur releasor)
 - **Outils** : documentator, skill-creator
 
@@ -18,33 +18,33 @@ Un utilisateur qui veut uniquement les audits doit installer tous les skills git
 
 ### Option A : reviews / git / php
 
-| Plugin          | Skills                                                          | Description                          |
-| --------------- | --------------------------------------------------------------- | ------------------------------------ |
-| **review-skills** | ecodesign-review, gdpr-review, seo-review, accessibility-review | Audits qualité web                   |
-| **git-skills**    | commitor, changelogator, releasor, documentator, skill-creator  | Workflow git et documentation        |
-| **php-skills**    | php-security-review, php-performance-review                     | Audits PHP / Laravel / Kirby         |
+| Plugin           | Skills                                                          | Description                   |
+| ---------------- | --------------------------------------------------------------- | ----------------------------- |
+| **audit-skills** | ecodesign-review, gdpr-review, seo-review, accessibility-review | Audits qualité web            |
+| **git-skills**   | commitor, changelogator, releasor, documentator, skill-creator  | Workflow git et documentation |
+| **php-skills**   | php-security-review, php-performance-review                     | Audits PHP / Laravel / Kirby  |
 
 **Avantage** : séparation claire entre "auditer" et "produire".
 **Inconvénient** : `documentator` et `skill-creator` ne sont pas vraiment liés à Git.
 
 ### Option B : reviews / docs / php
 
-| Plugin          | Skills                                                          | Description                          |
-| --------------- | --------------------------------------------------------------- | ------------------------------------ |
-| **review-skills** | ecodesign-review, gdpr-review, seo-review, accessibility-review | Audits qualité web                   |
-| **docs-skills**   | commitor, changelogator, releasor, documentator, skill-creator  | Documentation et workflow            |
-| **php-skills**    | php-security-review, php-performance-review                     | Audits PHP / Laravel / Kirby         |
+| Plugin           | Skills                                                          | Description                  |
+| ---------------- | --------------------------------------------------------------- | ---------------------------- |
+| **audit-skills** | ecodesign-review, gdpr-review, seo-review, accessibility-review | Audits qualité web           |
+| **docs-skills**  | commitor, changelogator, releasor, documentator, skill-creator  | Documentation et workflow    |
+| **php-skills**   | php-security-review, php-performance-review                     | Audits PHP / Laravel / Kirby |
 
 **Avantage** : le nom "docs" englobe mieux documentator et skill-creator.
 **Inconvénient** : commitor/changelogator/releasor sont plus "git" que "docs".
 
 ### Option C : reviews / workflow / php
 
-| Plugin            | Skills                                                          | Description                          |
-| ----------------- | --------------------------------------------------------------- | ------------------------------------ |
-| **review-skills** | ecodesign-review, gdpr-review, seo-review, accessibility-review | Audits qualité web                   |
-| **workflow-skills**| commitor, changelogator, releasor, documentator, skill-creator  | Workflow de développement            |
-| **php-skills**    | php-security-review, php-performance-review                     | Audits PHP / Laravel / Kirby         |
+| Plugin              | Skills                                                          | Description                  |
+| ------------------- | --------------------------------------------------------------- | ---------------------------- |
+| **audit-skills**    | ecodesign-review, gdpr-review, seo-review, accessibility-review | Audits qualité web           |
+| **workflow-skills** | commitor, changelogator, releasor, documentator, skill-creator  | Workflow de développement    |
+| **php-skills**      | php-security-review, php-performance-review                     | Audits PHP / Laravel / Kirby |
 
 **Avantage** : "workflow" est assez large pour englober git, docs et création de skills.
 **Inconvénient** : nom plus vague.
