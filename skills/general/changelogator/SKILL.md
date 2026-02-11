@@ -77,10 +77,14 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 
 ### 🔥 Removed
 - description
+
+### ⚙️ Technical
+- description
 ```
 
 ## Output Rules
 
+- **Rewrite descriptions** — do not copy commit subjects verbatim. Rephrase into clear, human-readable sentences. Use backticks for code references (skill names, commands, files, config keys). Capitalize the first word.
 - **Omit empty categories** — only show categories that have commits
 - **Omit Technical by default** — only include if the user explicitly asks (e.g., "include technical changes", "full changelog")
 - **Scope as bold prefix** when present: `- **scope**: description`
@@ -114,18 +118,21 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 ## v1.3.0 - 2026-02-12
 
 ### ✨ Added
-- **auth**: add OAuth2 login with Google (NTT-128)
+- **auth**: `OAuth2` login with Google provider (NTT-128)
 
 ### 🔨 Changed
-- **ui**: improve loading spinner animation
+- **ui**: Improve the loading spinner animation
 
 ### 🐛 Fixed
-- **exports**: prevent duplicate rows in CSV export
+- **exports**: Fix duplicate rows appearing in CSV exports
 
 ### 🔥 Removed
-- **api**: drop deprecated v1 endpoints
+- **api**: Drop deprecated `v1` API endpoints
+
+### ⚙️ Technical
+- Simplify database connection pooling
 ```
 
 Suggested version: **v1.3.0** (minor bump — contains new feature)
 
-> Note: 1 technical commit omitted (use "full changelog" to include).
+> Note: Technical section included because "full changelog" was requested.
