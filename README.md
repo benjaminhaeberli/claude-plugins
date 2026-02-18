@@ -4,25 +4,35 @@
 
 ## Plugins
 
-### General (framework-agnostic)
+### General
 
-| Skill                                                        | Description                                         |
-| ------------------------------------------------------------ | --------------------------------------------------- |
-| [skill-creator](skills/general/skill-creator/)               | Guide for creating effective skills                          |
-| [ecodesign-review](skills/general/ecodesign-review/)         | Audit eco-design & digital sobriety of a web app             |
-| [gdpr-review](skills/general/gdpr-review/)                   | Audit GDPR/RGPD/nLPD compliance of a web app                |
-| [seo-review](skills/general/seo-review/)                     | Audit technical SEO of a web app                             |
-| [accessibility-review](skills/general/accessibility-review/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app         |
-| [changelogator](skills/general/changelogator/)               | Generate a changelog from git commits (Keep a Changelog + Semver)            |
-| [commitor](skills/general/commitor/)                         | Generate commit messages (GitMoji + Conventional Commits + Keep a Changelog) |
-| [documentator](skills/general/documentator/)                 | Generate or update structured documentation in Markdown      |
+| Skill                                              | Description                                         |
+| -------------------------------------------------- | --------------------------------------------------- |
+| [skill-creator](skills/general/skill-creator/)     | Guide for creating effective skills                  |
+| [documentator](skills/general/documentator/)       | Generate or update structured documentation in Markdown |
 
-### Stack-specific (PHP / Laravel / Kirby)
+### Git
 
-| Skill                                                        | Description                                       | Technologies                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------- | ------------------------------------------------------------- |
-| [php-security-review](skills/php/php-security-review/)       | Audit OWASP security of a PHP web app             | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
-| [php-performance-review](skills/php/php-performance-review/) | Audit performance & optimization of a PHP web app | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
+| Skill                                              | Description                                         |
+| -------------------------------------------------- | --------------------------------------------------- |
+| [commitor](skills/git/commitor/)                   | Generate commit messages (GitMoji + Conventional Commits + Keep a Changelog) |
+| [changelogator](skills/git/changelogator/)         | Generate a changelog from git commits (Keep a Changelog + Semver) |
+
+### Audit
+
+| Skill                                                    | Description                                         |
+| -------------------------------------------------------- | --------------------------------------------------- |
+| [ecodesign-audit](skills/audit/ecodesign-audit/)         | Audit eco-design & digital sobriety of a web app    |
+| [gdpr-audit](skills/audit/gdpr-audit/)                   | Audit GDPR/RGPD/nLPD compliance of a web app        |
+| [seo-audit](skills/audit/seo-audit/)                     | Audit technical SEO of a web app                     |
+| [accessibility-audit](skills/audit/accessibility-audit/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app |
+
+### PHP
+
+| Skill                                                          | Description                                       | Technologies                                                  |
+| -------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------- |
+| [php-security-audit](skills/php/php-security-audit/)           | Audit OWASP security of a PHP web app             | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
+| [php-performance-audit](skills/php/php-performance-audit/)     | Audit performance & optimization of a PHP web app | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
 
 ## Installation
 
@@ -38,6 +48,8 @@
 
 ```
 /plugin install general-skills@benjaminhaeberli
+/plugin install git-skills@benjaminhaeberli
+/plugin install audit-skills@benjaminhaeberli
 /plugin install php-skills@benjaminhaeberli
 ```
 
@@ -56,16 +68,16 @@ Add individual skills to your project's `.claude/settings.json`:
 ```json
 {
   "skills": [
-    "/path/to/claude-plugins/skills/general/ecodesign-review",
-    "/path/to/claude-plugins/skills/general/gdpr-review",
-    "/path/to/claude-plugins/skills/general/seo-review",
-    "/path/to/claude-plugins/skills/general/accessibility-review",
-    "/path/to/claude-plugins/skills/general/changelogator",
-    "/path/to/claude-plugins/skills/general/commitor",
     "/path/to/claude-plugins/skills/general/documentator",
     "/path/to/claude-plugins/skills/general/skill-creator",
-    "/path/to/claude-plugins/skills/php/php-security-review",
-    "/path/to/claude-plugins/skills/php/php-performance-review"
+    "/path/to/claude-plugins/skills/git/commitor",
+    "/path/to/claude-plugins/skills/git/changelogator",
+    "/path/to/claude-plugins/skills/audit/ecodesign-audit",
+    "/path/to/claude-plugins/skills/audit/gdpr-audit",
+    "/path/to/claude-plugins/skills/audit/seo-audit",
+    "/path/to/claude-plugins/skills/audit/accessibility-audit",
+    "/path/to/claude-plugins/skills/php/php-security-audit",
+    "/path/to/claude-plugins/skills/php/php-performance-audit"
   ]
 }
 ```
@@ -85,34 +97,36 @@ skills/
 ├── general/                      # general-skills plugin
 │   ├── skill-creator/
 │   │   └── SKILL.md
-│   ├── ecodesign-review/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── checklist.md
-│   ├── gdpr-review/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── checklist.md
-│   ├── seo-review/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── checklist.md
-│   ├── accessibility-review/
-│   │   ├── SKILL.md
-│   │   └── references/
-│   │       └── checklist.md
-│   ├── changelogator/
-│   │   └── SKILL.md
-│   ├── commitor/
-│   │   └── SKILL.md
 │   └── documentator/
 │       └── SKILL.md
+├── git/                          # git-skills plugin
+│   ├── commitor/
+│   │   └── SKILL.md
+│   └── changelogator/
+│       └── SKILL.md
+├── audit/                        # audit-skills plugin
+│   ├── ecodesign-audit/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── checklist.md
+│   ├── gdpr-audit/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── checklist.md
+│   ├── seo-audit/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   │       └── checklist.md
+│   └── accessibility-audit/
+│       ├── SKILL.md
+│       └── references/
+│           └── checklist.md
 └── php/                          # php-skills plugin
-    ├── php-security-review/
+    ├── php-security-audit/
     │   ├── SKILL.md
     │   └── references/
     │       └── checklist.md
-    └── php-performance-review/
+    └── php-performance-audit/
         ├── SKILL.md
         └── references/
             └── checklist.md

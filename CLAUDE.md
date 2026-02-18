@@ -6,7 +6,9 @@
 
 ```
 .claude-plugin/marketplace.json          # Marketplace catalog
-skills/general/<skill-name>/SKILL.md     # General skills (framework-agnostic)
+skills/general/<skill-name>/SKILL.md     # General skills (docs, skill creation)
+skills/git/<skill-name>/SKILL.md         # Git workflow skills
+skills/audit/<skill-name>/SKILL.md       # Web audit skills
 skills/php/<skill-name>/SKILL.md         # PHP-specific skills
 ```
 

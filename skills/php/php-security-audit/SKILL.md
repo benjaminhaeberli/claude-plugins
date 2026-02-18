@@ -1,5 +1,5 @@
 ---
-name: php-security-review
+name: php-security-audit
 description: Analyze a PHP web application or codebase for security vulnerabilities and OWASP compliance. Use when the user asks to audit, check, review, or analyze the security, vulnerabilities, OWASP compliance, or hardening of a PHP, Laravel, Kirby, Livewire, or Blade application. Also use when the user mentions "securite", "security", "OWASP", "injection SQL", "XSS", "CSRF", "faille", "vulnerabilite", "pentest", "hardening", "authentication", or "authorization". Specialized for PHP, Laravel, Kirby CMS, Livewire, Blade, Vite, Tailwind CSS, and SQL databases.
 ---
 
@@ -98,7 +98,7 @@ When listing recommendations, prioritize by exploitability:
 Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
 
 ```
-/docs/YYMMDD_php-security-review.md
+/docs/YYMMDD_php-security-audit.md
 ```
 
 Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.

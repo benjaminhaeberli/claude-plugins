@@ -1,5 +1,5 @@
 ---
-name: accessibility-review
+name: accessibility-audit
 description: Analyze a web application or codebase for accessibility and WCAG compliance. Use when the user asks to audit, check, review, or analyze accessibility, a11y, WCAG, RGAA, inclusive design, or eCH-0059 compliance of a website, web app, or codebase. Also use when the user mentions "accessibilite", "handicap", "lecteur d'ecran", "screen reader", "ARIA", "contraste", "navigation clavier", "keyboard navigation", "focus", or "WAI". Works with HTML, CSS, JavaScript, TypeScript, PHP, Blade, Kirby, and common web frameworks.
 ---
 
@@ -92,7 +92,7 @@ When listing recommendations, prioritize by impact on users:
 Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
 
 ```
-/docs/YYMMDD_accessibility-review.md
+/docs/YYMMDD_accessibility-audit.md
 ```
 
 Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.
