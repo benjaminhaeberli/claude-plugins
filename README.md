@@ -17,6 +17,7 @@
 | -------------------------------------------------- | --------------------------------------------------- |
 | [commitor](skills/git/commitor/)                   | Generate commit messages (GitMoji + Conventional Commits + Keep a Changelog) |
 | [changelogator](skills/git/changelogator/)         | Generate a changelog from git commits (Keep a Changelog + Semver) |
+| [releasor](skills/git/releasor/)                   | Orchestrate a full release: changelog, CHANGELOG.md, Git tag, and GitHub publication |
 
 ### Audit
 
@@ -72,6 +73,7 @@ Add individual skills to your project's `.claude/settings.json`:
     "/path/to/claude-plugins/skills/general/skill-creator",
     "/path/to/claude-plugins/skills/git/commitor",
     "/path/to/claude-plugins/skills/git/changelogator",
+    "/path/to/claude-plugins/skills/git/releasor",
     "/path/to/claude-plugins/skills/audit/ecodesign-audit",
     "/path/to/claude-plugins/skills/audit/gdpr-audit",
     "/path/to/claude-plugins/skills/audit/seo-audit",
@@ -102,7 +104,9 @@ skills/
 ├── git/                          # git-skills plugin
 │   ├── commitor/
 │   │   └── SKILL.md
-│   └── changelogator/
+│   ├── changelogator/
+│   │   └── SKILL.md
+│   └── releasor/
 │       └── SKILL.md
 ├── audit/                        # audit-skills plugin
 │   ├── ecodesign-audit/

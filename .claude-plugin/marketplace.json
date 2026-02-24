@@ -23,7 +23,7 @@
       "source": "./skills/git",
       "strict": false,
       "license": "CC-BY-SA-4.0",
-      "skills": ["./changelogator", "./commitor"]
+      "skills": ["./changelogator", "./commitor", "./releasor"]
     },
     {
       "name": "audit-skills",
