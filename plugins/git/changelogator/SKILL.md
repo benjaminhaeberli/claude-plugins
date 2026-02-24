@@ -86,7 +86,6 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 
 - **Rewrite descriptions** — do not copy commit subjects verbatim. Rephrase into clear, human-readable sentences. Use backticks for code references (skill names, commands, files, config keys). Capitalize the first word.
 - **Omit empty categories** — only show categories that have commits
-- **Omit Technical by default** — only include if the user explicitly asks (e.g., "include technical changes", "full changelog")
 - **Scope as bold prefix** when present: `- **scope**: description`
 - **No scope**: just `- description`
 - **Skip merge commits** — ignore subjects starting with `Merge`
@@ -134,5 +133,3 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 ```
 
 Suggested version: **v1.3.0** (minor bump — contains new feature)
-
-> Note: Technical section included because "full changelog" was requested.

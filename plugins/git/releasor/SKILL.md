@@ -163,7 +163,6 @@ If no tag exists, suggest `v0.1.0`.
 - Rewrite descriptions — do not copy commit subjects verbatim
 - Use backticks for code references (commands, file names, keys)
 - Omit empty categories
-- Omit Technical by default (include only if user asks)
 - English only
 - Skip merge commits
 
