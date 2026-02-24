@@ -1,5 +1,5 @@
 ---
-name: seo-review
+name: seo-audit
 description: Analyze a web application or codebase for technical SEO best practices. Use when the user asks to audit, check, review, or analyze the SEO, search engine optimization, technical SEO, on-page SEO, or indexability of a website, web app, or codebase. Also use when the user mentions "SEO", "referencement", "referencement naturel", "meta tags", "sitemap", "schema.org", "structured data", "donnees structurees", "canonical", "indexation", "SERP", "rich snippets", or "Core Web Vitals". Works with HTML, CSS, JavaScript, TypeScript, PHP, Blade, Kirby, and common web frameworks.
 ---
 
@@ -90,7 +90,7 @@ When listing recommendations, prioritize by:
 Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
 
 ```
-/docs/YYMMDD_seo-review.md
+/docs/YYMMDD_seo-audit.md
 ```
 
 Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.

@@ -10,32 +10,24 @@
   },
   "plugins": [
     {
-      "name": "general-skills",
-      "description": "Skills for eco-design, GDPR, SEO, accessibility audits, documentation, commit message generation, changelog generation, and skill creation.",
-      "source": "./skills/general",
-      "strict": false,
-      "license": "CC-BY-SA-4.0",
-      "skills": [
-        "./accessibility-review",
-        "./ecodesign-review",
-        "./gdpr-review",
-        "./changelogator",
-        "./commitor",
-        "./documentator",
-        "./seo-review",
-        "./skill-creator"
-      ]
+      "name": "general",
+      "description": "Skills for documentation generation and skill creation.",
+      "source": "./plugins/general"
     },
     {
-      "name": "php-skills",
+      "name": "git",
+      "description": "Skills for commit message generation and changelog generation.",
+      "source": "./plugins/git"
+    },
+    {
+      "name": "audit",
+      "description": "Skills for eco-design, GDPR, SEO, and accessibility audits.",
+      "source": "./plugins/audit"
+    },
+    {
+      "name": "php",
       "description": "PHP-focused skills for security and performance auditing.",
-      "source": "./skills/php",
-      "strict": false,
-      "license": "CC-BY-SA-4.0",
-      "skills": [
-        "./php-performance-review",
-        "./php-security-review"
-      ]
+      "source": "./plugins/php"
     }
   ]
 }

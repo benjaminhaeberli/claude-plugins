@@ -1,5 +1,5 @@
 ---
-name: gdpr-review
+name: gdpr-audit
 description: Analyze a web application or codebase for GDPR/RGPD and nLPD (Swiss) compliance. Use when the user asks to audit, check, review, or analyze privacy compliance, data protection, GDPR, RGPD, nLPD, cookie consent, personal data handling, or user rights implementation. Also use when the user mentions "privacy by design", "données personnelles", "CNIL", "protection des données", "consentement", or "droit à l'effacement". Works with HTML, CSS, JavaScript, TypeScript, PHP, and common web frameworks.
 ---
 
@@ -88,7 +88,7 @@ When listing recommendations, prioritize by risk:
 Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
 
 ```
-/docs/YYMMDD_gdpr-review.md
+/docs/YYMMDD_gdpr-audit.md
 ```
 
 Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.

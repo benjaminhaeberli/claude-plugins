@@ -1,5 +1,5 @@
 ---
-name: php-performance-review
+name: php-performance-audit
 description: Analyze a PHP web application or codebase for performance issues and optimization opportunities. Use when the user asks to audit, check, review, or analyze the performance, speed, optimization, slow queries, caching, or scalability of a PHP, Laravel, Kirby, Livewire, or Blade application. Also use when the user mentions "performance", "lenteur", "slow", "N+1", "query optimization", "cache", "OPcache", "eager loading", "lazy loading queries", "index SQL", "optimisation", or "benchmark". Specialized for PHP, Laravel, Kirby CMS, Livewire, Blade, Vite, Tailwind CSS, and SQL databases.
 ---
 
@@ -97,7 +97,7 @@ When listing recommendations, prioritize by measurable impact:
 Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
 
 ```
-/docs/YYMMDD_php-performance-review.md
+/docs/YYMMDD_php-performance-audit.md
 ```
 
 Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.

@@ -1,5 +1,5 @@
 ---
-name: ecodesign-review
+name: ecodesign-audit
 description: Analyze a web application or codebase for eco-design and digital sobriety. Use when the user asks to audit, check, review, or analyze the ecological impact, green IT compliance, eco-design, energy efficiency, or digital sobriety of a website, web app, or codebase. Also use when the user mentions "ecodesign", "green IT", "sobriete numerique", "eco-conception", "RGESN", or "115 pratiques". Works with HTML, CSS, JavaScript, TypeScript, PHP, and common web frameworks.
 ---
 
@@ -83,7 +83,7 @@ When listing recommendations, prioritize by:
 Once the audit is complete, save the full analysis as a Markdown document at the root of the audited codebase:
 
 ```
-/docs/YYMMDD_ecodesign-review.md
+/docs/YYMMDD_ecodesign-audit.md
 ```
 
 Where `YYMMDD` is the current date (e.g., `260206` for February 6, 2026). Create the `/docs/` directory if it does not exist.

@@ -1,0 +1,5 @@
+{
+  "name": "git",
+  "description": "Skills for commit message generation and changelog generation.",
+  "skills": "./"
+}
