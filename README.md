@@ -6,34 +6,34 @@
 
 ### General
 
-| Skill                                              | Description                                         |
-| -------------------------------------------------- | --------------------------------------------------- |
-| [skill-creator](skills/general/skill-creator/)     | Guide for creating effective skills                  |
-| [documentator](skills/general/documentator/)       | Generate or update structured documentation in Markdown |
+| Skill                                                | Description                                         |
+| ---------------------------------------------------- | --------------------------------------------------- |
+| [skill-creator](plugins/general/skill-creator/)      | Guide for creating effective skills                  |
+| [documentator](plugins/general/documentator/)        | Generate or update structured documentation in Markdown |
 
 ### Git
 
-| Skill                                              | Description                                         |
-| -------------------------------------------------- | --------------------------------------------------- |
-| [commitor](skills/git/commitor/)                   | Generate commit messages (GitMoji + Conventional Commits + Keep a Changelog) |
-| [changelogator](skills/git/changelogator/)         | Generate a changelog from git commits (Keep a Changelog + Semver) |
-| [releasor](skills/git/releasor/)                   | Orchestrate a full release: changelog, CHANGELOG.md, Git tag, and GitHub publication |
+| Skill                                                | Description                                         |
+| ---------------------------------------------------- | --------------------------------------------------- |
+| [commitor](plugins/git/commitor/)                    | Generate commit messages (GitMoji + Conventional Commits + Keep a Changelog) |
+| [changelogator](plugins/git/changelogator/)          | Generate a changelog from git commits (Keep a Changelog + Semver) |
+| [releasor](plugins/git/releasor/)                    | Orchestrate a full release: changelog, CHANGELOG.md, Git tag, and GitHub publication |
 
 ### Audit
 
-| Skill                                                    | Description                                         |
-| -------------------------------------------------------- | --------------------------------------------------- |
-| [ecodesign-audit](skills/audit/ecodesign-audit/)         | Audit eco-design & digital sobriety of a web app    |
-| [gdpr-audit](skills/audit/gdpr-audit/)                   | Audit GDPR/RGPD/nLPD compliance of a web app        |
-| [seo-audit](skills/audit/seo-audit/)                     | Audit technical SEO of a web app                     |
-| [accessibility-audit](skills/audit/accessibility-audit/) | Audit WCAG/RGAA/eCH-0059 accessibility of a web app |
+| Skill                                                      | Description                                         |
+| ---------------------------------------------------------- | --------------------------------------------------- |
+| [ecodesign-audit](plugins/audit/ecodesign-audit/)          | Audit eco-design & digital sobriety of a web app    |
+| [gdpr-audit](plugins/audit/gdpr-audit/)                    | Audit GDPR/RGPD/nLPD compliance of a web app        |
+| [seo-audit](plugins/audit/seo-audit/)                      | Audit technical SEO of a web app                     |
+| [accessibility-audit](plugins/audit/accessibility-audit/)  | Audit WCAG/RGAA/eCH-0059 accessibility of a web app |
 
 ### PHP
 
-| Skill                                                          | Description                                       | Technologies                                                  |
-| -------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------- |
-| [php-security-audit](skills/php/php-security-audit/)           | Audit OWASP security of a PHP web app             | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
-| [php-performance-audit](skills/php/php-performance-audit/)     | Audit performance & optimization of a PHP web app | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
+| Skill                                                            | Description                                       | Technologies                                                  |
+| ---------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------- |
+| [php-security-audit](plugins/php/php-security-audit/)            | Audit OWASP security of a PHP web app             | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
+| [php-performance-audit](plugins/php/php-performance-audit/)      | Audit performance & optimization of a PHP web app | PHP, Laravel, Kirby, Livewire, Blade, Vite, Tailwind CSS, SQL |
 
 ## Installation
 
@@ -48,10 +48,10 @@
 **2. Install the plugins**:
 
 ```
-/plugin install general-skills@benjaminhaeberli
-/plugin install git-skills@benjaminhaeberli
-/plugin install audit-skills@benjaminhaeberli
-/plugin install php-skills@benjaminhaeberli
+/plugin install general@benjaminhaeberli
+/plugin install git@benjaminhaeberli
+/plugin install audit@benjaminhaeberli
+/plugin install php@benjaminhaeberli
 ```
 
 Auto-updates can be enabled via `/plugin` > Marketplaces > Enable auto-update.
@@ -59,7 +59,7 @@ Auto-updates can be enabled via `/plugin` > Marketplaces > Enable auto-update.
 ### Local testing
 
 ```bash
-claude --plugin-dir /path/to/skills
+claude --plugin-dir /path/to/plugins
 ```
 
 ### Manual (per-project, without plugin system)
@@ -69,17 +69,17 @@ Add individual skills to your project's `.claude/settings.json`:
 ```json
 {
   "skills": [
-    "/path/to/claude-plugins/skills/general/documentator",
-    "/path/to/claude-plugins/skills/general/skill-creator",
-    "/path/to/claude-plugins/skills/git/commitor",
-    "/path/to/claude-plugins/skills/git/changelogator",
-    "/path/to/claude-plugins/skills/git/releasor",
-    "/path/to/claude-plugins/skills/audit/ecodesign-audit",
-    "/path/to/claude-plugins/skills/audit/gdpr-audit",
-    "/path/to/claude-plugins/skills/audit/seo-audit",
-    "/path/to/claude-plugins/skills/audit/accessibility-audit",
-    "/path/to/claude-plugins/skills/php/php-security-audit",
-    "/path/to/claude-plugins/skills/php/php-performance-audit"
+    "/path/to/claude-plugins/plugins/general/documentator",
+    "/path/to/claude-plugins/plugins/general/skill-creator",
+    "/path/to/claude-plugins/plugins/git/commitor",
+    "/path/to/claude-plugins/plugins/git/changelogator",
+    "/path/to/claude-plugins/plugins/git/releasor",
+    "/path/to/claude-plugins/plugins/audit/ecodesign-audit",
+    "/path/to/claude-plugins/plugins/audit/gdpr-audit",
+    "/path/to/claude-plugins/plugins/audit/seo-audit",
+    "/path/to/claude-plugins/plugins/audit/accessibility-audit",
+    "/path/to/claude-plugins/plugins/php/php-security-audit",
+    "/path/to/claude-plugins/plugins/php/php-performance-audit"
   ]
 }
 ```
@@ -94,21 +94,27 @@ The `skill-creator` skill contains content derived from Anthropic's Claude Code 
 
 ```
 .claude-plugin/
-└── marketplace.json              # Marketplace catalog
-skills/
-├── general/                      # general-skills plugin
+└── marketplace.json                    # Marketplace catalog
+plugins/
+├── general/                            # general plugin
+│   ├── .claude-plugin/
+│   │   └── plugin.json
 │   ├── skill-creator/
 │   │   └── SKILL.md
 │   └── documentator/
 │       └── SKILL.md
-├── git/                          # git-skills plugin
+├── git/                                # git plugin
+│   ├── .claude-plugin/
+│   │   └── plugin.json
 │   ├── commitor/
 │   │   └── SKILL.md
 │   ├── changelogator/
 │   │   └── SKILL.md
 │   └── releasor/
 │       └── SKILL.md
-├── audit/                        # audit-skills plugin
+├── audit/                              # audit plugin
+│   ├── .claude-plugin/
+│   │   └── plugin.json
 │   ├── ecodesign-audit/
 │   │   ├── SKILL.md
 │   │   └── references/
@@ -125,7 +131,9 @@ skills/
 │       ├── SKILL.md
 │       └── references/
 │           └── checklist.md
-└── php/                          # php-skills plugin
+└── php/                                # php plugin
+    ├── .claude-plugin/
+    │   └── plugin.json
     ├── php-security-audit/
     │   ├── SKILL.md
     │   └── references/

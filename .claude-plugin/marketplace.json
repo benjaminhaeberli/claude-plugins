@@ -10,41 +10,24 @@
   },
   "plugins": [
     {
-      "name": "general-skills",
+      "name": "general",
       "description": "Skills for documentation generation and skill creation.",
-      "source": "./skills/general",
-      "strict": false,
-      "license": "CC-BY-SA-4.0",
-      "skills": ["./documentator", "./skill-creator"]
+      "source": "./plugins/general"
     },
     {
-      "name": "git-skills",
+      "name": "git",
       "description": "Skills for commit message generation and changelog generation.",
-      "source": "./skills/git",
-      "strict": false,
-      "license": "CC-BY-SA-4.0",
-      "skills": ["./changelogator", "./commitor", "./releasor"]
+      "source": "./plugins/git"
     },
     {
-      "name": "audit-skills",
+      "name": "audit",
       "description": "Skills for eco-design, GDPR, SEO, and accessibility audits.",
-      "source": "./skills/audit",
-      "strict": false,
-      "license": "CC-BY-SA-4.0",
-      "skills": [
-        "./accessibility-audit",
-        "./ecodesign-audit",
-        "./gdpr-audit",
-        "./seo-audit"
-      ]
+      "source": "./plugins/audit"
     },
     {
-      "name": "php-skills",
+      "name": "php",
       "description": "PHP-focused skills for security and performance auditing.",
-      "source": "./skills/php",
-      "strict": false,
-      "license": "CC-BY-SA-4.0",
-      "skills": ["./php-performance-audit", "./php-security-audit"]
+      "source": "./plugins/php"
     }
   ]
 }
