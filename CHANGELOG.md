@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## v1.5.1 - 2026-03-04
+
+This release enhances the `commitor` and `changelogator` skills with new commit types, smarter conventions, and improved language handling. The `commitor` skill gains `security`, `build`, and `wip` types, breaking change support, and a new merge mode for synthesizing branch-wide commit messages. The `changelogator` gets aligned category mapping, French localization, and auto-generated release summaries.
+
+### 🔨 Changed
+
+- **commitor**: Add `security` 🔒, `build` 🏗️, and `wip` 🚧 commit types
+- **commitor**: Add breaking change format — `!` suffix and `BREAKING CHANGE:` footer
+- **commitor**: Clarify `patch` type as multi-area fallback
+- **commitor**: Add merge mode — use "merge to `<branch>`" to synthesize a commit from the full branch diff
+- **changelogator**: Align category mapping with `commitor` (`security` in Fixed, `Breaking` category, `wip`/`build` excluded)
+- **changelogator**: Add French localization table for changelog category names
+- **changelogator**: Add release summary paragraph to changelog output
+- **changelogator**: Replace "English only" rule with language-adaptive behavior
+- **commitor**: Replace "English only" rule with language-adaptive behavior
+
+### ⚙️ Technical
+
+- Add attribution settings tip in README with link to Claude Code docs
+- Disable `Co-Authored-By` attribution in `.claude/settings.json`
+
 ## v1.5.0 - 2026-02-25
 
 ### ✨ Added
