@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## v1.5.2 - 2026-03-04
+
+This release refines the git skill suite: the `build` commit type is now included in changelogs under Technical, the GitHub compare URL is surfaced in all release notes, and contributors are displayed inline rather than in a separate section. The outdated `releasor` task doc has been removed.
+
+**Contributors:** @benjaminhaeberli
+**GitHub compare:** https://github.com/benjaminhaeberli/claude-plugins/compare/v1.5.1...v1.5.2
+
+### 🔨 Changed
+
+- **changelogator, commitor, releasor**: `build` commit type moved from excluded to `Technical` category
+- **changelogator**: GitHub compare URL now included in generated changelog output
+- **releasor**: contributors displayed inline after summary paragraph instead of a separate `## Contributors` section
+- **releasor**: release notes format unified — same structure for `CHANGELOG.md` and GitHub release body
+- **releasor**: added edge case handling for `--no-ff` merge commits (silent deduplication)
+- **releasor**: localization extended with `Contributors` and `GitHub compare` French translations
+
+### 🔥 Removed
+
+- Deleted `docs/tasks/260212_releasor.md` — task completed and no longer relevant
+
 ## v1.5.1 - 2026-03-04
 
 This release enhances the `commitor` and `changelogator` skills with new commit types, smarter conventions, and improved language handling. The `commitor` skill gains `security`, `build`, and `wip` types, breaking change support, and a new merge mode for synthesizing branch-wide commit messages. The `changelogator` gets aligned category mapping, French localization, and auto-generated release summaries.

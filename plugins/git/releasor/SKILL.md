@@ -122,6 +122,7 @@ The release notes use the following format (same for CHANGELOG.md and GitHub rel
 - ...
 ```
 
+> Always leave a blank line between the summary paragraph and the `Contributors`/`GitHub compare` lines.
 > `Contributors` line: only included when `gh` is available. Omit entirely if unavailable.
 > `GitHub compare` line: always included when the remote is a GitHub URL.
 
