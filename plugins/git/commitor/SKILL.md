@@ -20,6 +20,7 @@ Generate commit messages combining GitMoji + Conventional Commits + Keep a Chang
 
 ## Output Format
 
+Standard commit:
 ```
 <emoji> <type>(<scope>): <description> (<TASK-XXX>)
 
@@ -28,11 +29,20 @@ Generate commit messages combining GitMoji + Conventional Commits + Keep a Chang
 - ...
 ```
 
+Breaking change (append `!`, add footer):
+```
+<emoji> <type>(<scope>)!: <description>
+
+- Key change
+
+BREAKING CHANGE: <what breaks and how to migrate>
+```
+
 Scope and task number are optional. Only include them when relevant.
 
 ## Rules
 
-- English only
+- English by default; match the language of the existing changelog or commit history if evident
 - Title in lowercase, imperative mood ("add" not "added")
 - Title < 72 characters (including emoji and type prefix)
 - One type/emoji per commit
@@ -40,13 +50,14 @@ Scope and task number are optional. Only include them when relevant.
 - Use Unicode emojis (not `:shortcodes:`)
 - Scope is optional — use to specify the area of the commit (e.g., auth, panel, api)
 - Task number is optional — use project prefix format (e.g., NTT-123, BH-42)
+- Breaking changes: append `!` after type/scope and add a `BREAKING CHANGE:` footer describing what breaks and how to migrate
 
 ## Commit Types
 
 | Emoji | Type       | Description              |
 | ----- | ---------- | ------------------------ |
 | ✨    | feat       | New feature              |
-| 🔨    | patch      | Minor improvement        |
+| 🔨    | patch      | Minor improvement or multi-area change |
 | 🐛    | fix        | Bug fix                  |
 | 📝    | docs       | Documentation            |
 | 💄    | style      | UI / cosmetic change     |
@@ -57,6 +68,9 @@ Scope and task number are optional. Only include them when relevant.
 | 🔥    | remove     | Remove code or files     |
 | 🤖    | ai         | AI-related changes       |
 | ⚙️    | config     | Configuration            |
+| 🔒    | security   | Security fix or hardening |
+| 🏗️    | build      | Build system or tooling  |
+| 🚧    | wip        | Work in progress         |
 
 ## Changelog Mapping
 
@@ -66,9 +80,12 @@ Reference for mapping commit types to [Keep a Changelog](https://keepachangelog.
 | ------------------ | -------------------------- |
 | Added              | feat                       |
 | Changed            | patch, style, perf, data   |
-| Fixed              | fix                        |
+| Fixed              | fix, security              |
 | Removed            | remove                     |
-| Technical          | docs, refactor, test, ai, config |
+| Breaking           | any type with `!`          |
+| Technical          | docs, refactor, test, ai, config             |
+
+> `wip` and `build` commits are excluded from changelogs — they don't represent releasable changes.
 
 ## Examples
 
@@ -92,4 +109,25 @@ Reference for mapping commit types to [Keep a Changelog](https://keepachangelog.
 
 - Bump node version in GitHub Actions workflow
 - Update lockfile for compatibility
+```
+
+```
+🔒 security(api): sanitize user input to prevent SQL injection
+
+- Add parameterized queries to user search endpoint
+- Escape special characters in filter inputs
+```
+
+```
+🏗️ build: migrate bundler from webpack to vite
+
+- Replace webpack config with vite.config.ts
+- Update npm scripts for dev and build
+```
+
+```
+🚧 wip(checkout): draft multi-step payment flow
+
+- Add step components (address, payment, confirmation)
+- Payment API integration not yet connected
 ```

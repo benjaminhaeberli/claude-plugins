@@ -17,8 +17,9 @@ Generate a structured changelog from git commits following [Keep a Changelog](ht
 4. **Classify** into changelog categories using the mapping table
 5. **Detect breaking changes**: `!` after type (e.g., `feat!`) or `BREAKING CHANGE` in body
 6. **Suggest semver bump** based on the rules below
-7. **Generate** the markdown changelog
-8. **Output in chat** for validation
+7. **Write a summary paragraph**: 2–3 sentences, plain language, user-focused — highlight the most impactful changes, skip internal/technical ones
+8. **Generate** the markdown changelog
+9. **Output in chat** for validation
 
 ## Commit Format
 
@@ -42,11 +43,27 @@ Map commit types to changelog categories (consistent with commitor):
 
 | Changelog Category | Emoji | Commit Types                     |
 | ------------------ | ----- | -------------------------------- |
+| Breaking           | ⚠️    | any type with `!`                |
 | Added              | ✨    | feat                             |
 | Changed            | 🔨    | patch, style, perf, data         |
-| Fixed              | 🐛    | fix                              |
+| Fixed              | 🐛    | fix, security                    |
 | Removed            | 🔥    | remove                           |
 | Technical          | ⚙️    | docs, refactor, test, ai, config |
+
+> `wip` and `build` commits are excluded from changelogs — they don't represent releasable changes.
+
+## Localization
+
+When generating in French, use these category names:
+
+| English   | French    |
+| --------- | --------- |
+| Breaking  | Critique  |
+| Added     | Ajouté    |
+| Changed   | Changé    |
+| Fixed     | Corrigé   |
+| Removed   | Supprimé  |
+| Technical | Technique |
 
 ## Semver Rules
 
@@ -64,6 +81,8 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 
 ```markdown
 ## vX.Y.Z - YYYY-MM-DD
+
+<2–3 sentence summary of release highlights>
 
 ### ✨ Added
 - **scope**: description
@@ -90,7 +109,8 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 - **No scope**: just `- description`
 - **Skip merge commits** — ignore subjects starting with `Merge`
 - **Include task numbers** when present: `- **scope**: description (TASK-123)`
-- **English only**
+- **Language**: English by default; if the existing `CHANGELOG.md` or commits are in another language, match that language
+- **Summary paragraph**: 2–3 sentences, plain language, user-focused. Highlight the most impactful user-facing changes; skip `wip`, `build`, `refactor`, `test`, `docs`. End with a short transition if there are minor fixes (e.g., "Plus, a set of fixes.")
 
 ## Edge Cases
 
@@ -115,6 +135,8 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 
 ```markdown
 ## v1.3.0 - 2026-02-12
+
+This release brings Google OAuth2 login, making it easier to get started without a password. The deprecated v1 API endpoints have been removed — make sure to migrate to v2 before upgrading. Plus, a set of fixes and UI polish.
 
 ### ✨ Added
 - **auth**: `OAuth2` login with Google provider (NTT-128)
