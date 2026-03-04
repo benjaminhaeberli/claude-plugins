@@ -56,6 +56,8 @@
 
 Auto-updates can be enabled via `/plugin` > Marketplaces > Enable auto-update.
 
+> **Tip**: To hide Claude's `Co-Authored-By` attribution in commits and PRs, configure the [attribution settings](https://code.claude.com/docs/en/settings#attribution-settings) in `~/.claude/settings.json`. The `attribution` setting (with `commit` and `pr` keys set to empty strings) takes precedence over the deprecated `includeCoAuthoredBy` setting.
+
 ### Local testing
 
 ```bash

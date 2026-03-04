@@ -9,5 +9,9 @@
       "WebFetch(domain:www.securitycompass.com)",
       "WebFetch(domain:www.cookieyes.com)"
     ]
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
   }
 }
