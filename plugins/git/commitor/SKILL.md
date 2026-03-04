@@ -104,9 +104,9 @@ Reference for mapping commit types to [Keep a Changelog](https://keepachangelog.
 | Fixed              | fix, security              |
 | Removed            | remove                     |
 | Breaking           | any type with `!`          |
-| Technical          | docs, refactor, test, ai, config             |
+| Technical          | docs, refactor, test, ai, config, build |
 
-> `wip` and `build` commits are excluded from changelogs — they don't represent releasable changes.
+> `wip` commits are excluded from changelogs — they don't represent releasable changes.
 
 ## Examples
 

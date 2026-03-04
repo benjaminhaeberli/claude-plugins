@@ -44,6 +44,23 @@ gh pr list --search "<SHA>" --state merged --json number,url --jq '.[0] | "(#\(.
 
 Append `(#123)` to the relevant changelog entry when found.
 
+Build the **GitHub compare URL**:
+
+```bash
+git remote get-url origin   # → https://github.com/owner/repo.git (strip .git)
+# → https://github.com/owner/repo/compare/<prev-tag>...vX.Y.Z
+```
+
+**If `gh` is available**, resolve contributors:
+
+```bash
+git log <prev-tag>..HEAD --format="%H" | while read sha; do
+  gh api /repos/{owner}/{repo}/commits/$sha --jq '.author.login' 2>/dev/null
+done | sort -u
+```
+
+If `gh` unavailable: skip the Contributors line entirely.
+
 Propose the changelog and suggested version in chat. Let the user adjust before continuing.
 
 ### Step 3 — Update CHANGELOG.md
@@ -86,10 +103,17 @@ git tag -a vX.Y.Z -m "Release vX.Y.Z\n\n<changelog content>"
 
 ### Step 5 — Display release notes
 
-Always display the complete release notes in chat, ready to copy-paste:
+Always display the complete release notes in chat, ready to copy-paste.
+
+The release notes use the following format (same for CHANGELOG.md and GitHub release):
 
 ```markdown
 ## vX.Y.Z - YYYY-MM-DD
+
+<summary paragraph>
+
+**Contributors:** @username1, @username2
+**GitHub compare:** https://github.com/{owner}/{repo}/compare/{prev-tag}...vX.Y.Z
 
 ### ✨ Added
 - ...
@@ -98,18 +122,8 @@ Always display the complete release notes in chat, ready to copy-paste:
 - ...
 ```
 
-**If `gh` is available**, append a `## Contributors` section:
-
-```bash
-git log <prev-tag>..vX.Y.Z --format="%ae" | sort -u   # collect author emails
-gh api /repos/{owner}/{repo}/commits/<SHA> --jq '.author.login'  # resolve to GitHub username
-```
-
-```markdown
-## Contributors
-
-- [@username](https://github.com/username)
-```
+> `Contributors` line: only included when `gh` is available. Omit entirely if unavailable.
+> `GitHub compare` line: always included when the remote is a GitHub URL.
 
 Inform the user: "Tag created locally. Validate the release notes above before pushing."
 
@@ -150,20 +164,23 @@ If no tag exists, suggest `v0.1.0`.
 <emoji> <type>(<scope>): <description>
 ```
 
-| Changelog Category | Emoji | Commit Types                     |
-| ------------------ | ----- | -------------------------------- |
-| Added              | ✨    | feat                             |
-| Changed            | 🔨    | patch, style, perf, data         |
-| Fixed              | 🐛    | fix                              |
-| Removed            | 🔥    | remove                           |
-| Technical          | ⚙️    | docs, refactor, test, ai, config |
+| Changelog Category | Emoji | Commit Types                          |
+| ------------------ | ----- | ------------------------------------- |
+| Breaking           | ⚠️    | any type with `!`                     |
+| Added              | ✨    | feat                                  |
+| Changed            | 🔨    | patch, style, perf, data              |
+| Fixed              | 🐛    | fix, security                         |
+| Removed            | 🔥    | remove                                |
+| Technical          | ⚙️    | docs, refactor, test, ai, config, build |
+
+> `wip` commits are excluded from changelogs — they don't represent releasable changes.
 
 ## Output Rules
 
 - Rewrite descriptions — do not copy commit subjects verbatim
 - Use backticks for code references (commands, file names, keys)
 - Omit empty categories
-- English only
+- English by default; match existing changelog language if evident
 - Skip merge commits
 
 ## gh Availability Matrix
@@ -171,7 +188,7 @@ If no tag exists, suggest `v0.1.0`.
 | | Without `gh` | With `gh` |
 |---|---|---|
 | **Changelog** | Commits only | + PR numbers `(#123)` |
-| **Contributors** | Not included | `## Contributors` with `@username` |
+| **Contributors** | Not included | Inline after summary |
 | **Release notes** | Displayed in chat | Displayed in chat |
 | **Publication** | Manual (copy to GitHub UI) | Via `gh release create` |
 
@@ -179,6 +196,7 @@ If no tag exists, suggest `v0.1.0`.
 
 - **No tag**: use all commits, suggest `v0.1.0`
 - **No commits since tag**: stop and inform the user
-- **`gh` not available**: skip enrichment silently, proceed without it
+- **`gh` not available**: skip Contributors line and PR enrichment silently, proceed without it
 - **PR not found for a commit**: skip silently, no `(#...)` appended
 - **`CHANGELOG.md` missing**: create it with standard header before prepending
+- **`--no-ff` merges**: individual branch commits AND the merge commit both appear in `git log <tag>..HEAD`, causing duplicate changelog entries. Use `--ff-only` or squash merges for clean output. If duplicates are detected (same description on multiple commits), deduplicate silently.

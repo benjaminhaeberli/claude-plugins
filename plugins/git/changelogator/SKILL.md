@@ -18,8 +18,9 @@ Generate a structured changelog from git commits following [Keep a Changelog](ht
 5. **Detect breaking changes**: `!` after type (e.g., `feat!`) or `BREAKING CHANGE` in body
 6. **Suggest semver bump** based on the rules below
 7. **Write a summary paragraph**: 2–3 sentences, plain language, user-focused — highlight the most impactful changes, skip internal/technical ones
-8. **Generate** the markdown changelog
-9. **Output in chat** for validation
+8. **Build GitHub compare URL**: `git remote get-url origin` + strip `.git` + append `/compare/<prev-tag>...<new-tag>` (only if remote is a GitHub URL)
+9. **Generate** the markdown changelog
+10. **Output in chat** for validation
 
 ## Commit Format
 
@@ -48,9 +49,9 @@ Map commit types to changelog categories (consistent with commitor):
 | Changed            | 🔨    | patch, style, perf, data         |
 | Fixed              | 🐛    | fix, security                    |
 | Removed            | 🔥    | remove                           |
-| Technical          | ⚙️    | docs, refactor, test, ai, config |
+| Technical          | ⚙️    | docs, refactor, test, ai, config, build |
 
-> `wip` and `build` commits are excluded from changelogs — they don't represent releasable changes.
+> `wip` commits are excluded from changelogs — they don't represent releasable changes.
 
 ## Localization
 
@@ -63,7 +64,9 @@ When generating in French, use these category names:
 | Changed   | Changé    |
 | Fixed     | Corrigé   |
 | Removed   | Supprimé  |
-| Technical | Technique |
+| Technical      | Technique           |
+| Contributors   | Contributeurs       |
+| GitHub compare | Comparer sur GitHub |
 
 ## Semver Rules
 
@@ -83,6 +86,8 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 ## vX.Y.Z - YYYY-MM-DD
 
 <2–3 sentence summary of release highlights>
+
+**GitHub compare:** https://github.com/{owner}/{repo}/compare/{prev-tag}...vX.Y.Z
 
 ### ✨ Added
 - **scope**: description
@@ -137,6 +142,8 @@ Apply to the last tag version. If no tag exists, suggest `v0.1.0`.
 ## v1.3.0 - 2026-02-12
 
 This release brings Google OAuth2 login, making it easier to get started without a password. The deprecated v1 API endpoints have been removed — make sure to migrate to v2 before upgrading. Plus, a set of fixes and UI polish.
+
+**GitHub compare:** https://github.com/owner/repo/compare/v1.2.0...v1.3.0
 
 ### ✨ Added
 - **auth**: `OAuth2` login with Google provider (NTT-128)
