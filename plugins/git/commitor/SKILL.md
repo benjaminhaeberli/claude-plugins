@@ -1,6 +1,6 @@
 ---
 name: commitor
-description: Generate commit messages combining GitMoji, Conventional Commits, and Keep a Changelog. Use when the user wants to prepare a commit message, write a commit title, generate a conventional commit, add an emoji prefix, or describe staged changes. By default, only outputs the formatted message — executes git commit only when the user explicitly asks to commit.
+description: Generate commit messages combining GitMoji, Conventional Commits, and Keep a Changelog. Use when the user wants to prepare a commit message, write a commit title, generate a conventional commit, add an emoji prefix, or describe staged changes. By default, only outputs the formatted message — executes git commit only when the user explicitly asks to commit. Also handles merge commit summarization: use "merge to <branch>" to analyze the full branch diff.
 ---
 
 # Commitor
@@ -17,6 +17,27 @@ Generate commit messages combining GitMoji + Conventional Commits + Keep a Chang
 4. Write a short title in imperative mood and a bullet-point description
 5. **Default**: output the result in chat for review
 6. **If the user asked to commit**: run `git commit` with the generated message
+
+## Merge Mode
+
+**Trigger**: user says "merge to `<branch>`" or "merge commit to `<branch>`".
+
+The current branch is the source; `<branch>` is the merge target (e.g., `main`).
+
+**Workflow**:
+
+```bash
+# All commits on current branch since divergence
+git log <branch>..HEAD --format="---COMMIT---%n%H%n%s%n%b" --reverse
+
+# Cumulative diff stat for context
+git diff <branch>...HEAD --stat
+```
+
+Then:
+- Read all individual commits to understand the full scope
+- Pick the highest-significance type (`feat` > `fix` > `patch` > rest)
+- Synthesize a **single** commit message — group changes by theme, not one bullet per commit
 
 ## Output Format
 
