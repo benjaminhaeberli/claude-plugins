@@ -1,5 +1,6 @@
 {
   "name": "general",
   "description": "Skills for documentation generation and skill creation.",
+  "version": "1.5.3",
   "skills": "./"
 }

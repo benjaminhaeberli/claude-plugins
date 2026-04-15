@@ -1,5 +1,6 @@
 {
   "name": "audit",
   "description": "Skills for eco-design, GDPR, SEO, and accessibility audits.",
+  "version": "1.5.3",
   "skills": "./"
 }

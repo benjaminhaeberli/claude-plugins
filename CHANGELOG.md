@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## v1.5.3 - 2026-04-15
+
+Fix compatibility with the updated Claude Code plugin API, which now requires a `version` field in every `plugin.json` manifest.
+
+**Contributors:** @benjaminhaeberli
+**GitHub compare:** https://github.com/benjaminhaeberli/claude-plugins/compare/v1.5.2...v1.5.3
+
+### 🐛 Fixed
+
+- Add required `version` field to all four `plugin.json` manifests (`general`, `git`, `audit`, `php`)
+
 ## v1.5.2 - 2026-03-04
 
 This release refines the git skill suite: the `build` commit type is now included in changelogs under Technical, the GitHub compare URL is surfaced in all release notes, and contributors are displayed inline rather than in a separate section. The outdated `releasor` task doc has been removed.
