@@ -1,6 +1,5 @@
 {
   "name": "git",
   "description": "Skills for commit message generation and changelog generation.",
-  "version": "1.5.3",
-  "skills": "./"
+  "version": "1.5.3"
 }

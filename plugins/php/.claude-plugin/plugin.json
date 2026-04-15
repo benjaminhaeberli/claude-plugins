@@ -1,6 +1,5 @@
 {
   "name": "php",
   "description": "PHP-focused skills for security and performance auditing.",
-  "version": "1.5.3",
-  "skills": "./"
+  "version": "1.5.3"
 }

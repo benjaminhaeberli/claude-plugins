@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## v1.5.4 - 2026-04-15
+
+Remove explicit `skills` path from all `plugin.json` manifests to rely on auto-discovery, fixing skill loading after the Claude Code plugin API update.
+
+**Contributors:** @benjaminhaeberli
+**GitHub compare:** https://github.com/benjaminhaeberli/claude-plugins/compare/v1.5.3...v1.5.4
+
+### 🐛 Fixed
+- Remove `"skills": "./"` from all four `plugin.json` manifests — path was resolved relative to `.claude-plugin/`, making skill auto-discovery fail
+
 ## v1.5.3 - 2026-04-15
 
 Fix compatibility with the updated Claude Code plugin API, which now requires a `version` field in every `plugin.json` manifest.
