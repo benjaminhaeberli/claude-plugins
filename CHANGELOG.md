@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## v1.5.5 - 2026-04-15
+
+Move all skills into a `skills/` subdirectory per plugin to match the expected Claude Code plugin structure and fix skill auto-discovery in the VS Code extension.
+
+**Contributors:** @benjaminhaeberli
+**GitHub compare:** https://github.com/benjaminhaeberli/claude-plugins/compare/v1.5.4...v1.5.5
+
+### 🔨 Changed
+- Move all skill directories into `skills/` subdirectory for each plugin (`general`, `git`, `audit`, `php`) — required by Claude Code's auto-discovery mechanism
+- Update `README.md` and `CLAUDE.md` to reflect the new structure
+
 ## v1.5.4 - 2026-04-15
 
 Remove explicit `skills` path from all `plugin.json` manifests to rely on auto-discovery, fixing skill loading after the Claude Code plugin API update.
